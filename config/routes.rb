@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get 'tags/index'
+  get 'artists/index', defaults: { format: :json }
+
+  get 'tags/index', defaults: { format: :json }
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

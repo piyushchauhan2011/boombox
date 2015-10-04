@@ -36,7 +36,10 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    angular_rails_csrf (1.0.4)
+      rails (>= 3, < 5)
     arel (6.0.3)
+    awesome_print (1.6.1)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bson (3.2.4)
@@ -158,6 +161,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  angular_rails_csrf
+  awesome_print
   byebug
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
