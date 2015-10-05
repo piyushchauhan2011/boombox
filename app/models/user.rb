@@ -10,15 +10,15 @@ class User
   has_and_belongs_to_many :friends, class_name: 'User'
 
   def generate_recommendation
-    tmp = self.artists.map(&:artistID).to_a
-    self.friends.each { |f|
-      f.artists.not_in(artistID: tmp).each { |a|
-        ur = self.user_recommendations.find_or_create_by(artistID: a.artistID)
+    tmp = artists.map(&:artistID).to_a
+    friends.each do |f|
+      f.artists.not_in(artistID: tmp).each do |a|
+        ur = user_recommendations.find_or_create_by(artistID: a.artistID)
         ur.sum_artist_weight += a.weight
         ur.total_listeners_count += 1
         ur.save
-      }
-    }
+      end
+    end
   end
 
   # def get_tag_recommendation
