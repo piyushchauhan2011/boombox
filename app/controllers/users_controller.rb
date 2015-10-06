@@ -8,6 +8,14 @@ class UsersController < ApplicationController
     render json: current_user
   end
 
+  def artist
+    render json: current_user.artists.find_by(artistID: params[:artist_id])
+  end
+
+  def show_user_id
+    render json: User.find_by(userID: params[:id])
+  end
+
   def top_5_by_sum
     render json: current_user.user_recommendations.desc(:sum_artist_weight).take(5)
   end
