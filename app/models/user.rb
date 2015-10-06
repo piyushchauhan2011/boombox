@@ -9,6 +9,8 @@ class User
 
   has_and_belongs_to_many :friends, class_name: 'User'
 
+  index 'userID' => 1
+
   def generate_recommendation
     tmp = artists.map(&:artistID).to_a
     friends.each do |f|
