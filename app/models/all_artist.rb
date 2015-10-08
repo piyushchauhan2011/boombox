@@ -12,6 +12,9 @@ class AllArtist
 
   embeds_many :artist_tags
 
+  index 'artistID' => 1
+  index 'name' => 1
+
   def self.generate_recommendation
     User.all.each do |u|
       u.artists.each do |a|

@@ -5,4 +5,6 @@ class Artist
   field :weight, type: Integer
 
   embedded_in :user
+
+  index 'artistID' => 1
 end

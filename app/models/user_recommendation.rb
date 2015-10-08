@@ -6,4 +6,6 @@ class UserRecommendation
   field :total_listeners_count, type: Integer, default: 0
 
   embedded_in :user
+
+  index 'artistID' => 1
 end

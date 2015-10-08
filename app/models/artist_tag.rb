@@ -6,4 +6,6 @@ class ArtistTag
   field :timestamp, type: Date
 
   embedded_in :all_artist
+
+  index 'tagID' => 1
 end

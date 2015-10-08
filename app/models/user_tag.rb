@@ -6,4 +6,6 @@ class UserTag
   field :timestamp, type: Date
 
   embedded_in :user
+
+  index 'tagID' => 1
 end
